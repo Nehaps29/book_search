@@ -5,14 +5,23 @@ var submitEl = document.getElementById('submit');
 var authorBtnEl = document.getElementById('author-button'); 
 var authorBtnEl = document.getElementById('author-button');
 var isbnBtnEl = document.getElementById('isbn-button');
-var aResEl = document.getElementById('aRes');
+//var aResEl = document.getElementById('aRes');
 var displayListEl = document.getElementById('display-list');
 var displayResultEl = document.getElementById('display-result');
 var recentIsbnEl = document.getElementById('recent-isbn');
+
 submitEl.addEventListener("click", select);
 authorBtnEl.addEventListener("click", author_det);
 isbnBtnEl.addEventListener("click", isbn_det);
-//var imageEl = document.getElementById('image');
+var bookTitle1El = document.getElementById('book-title1');
+var review1El = document.getElementById('review1');
+var isbn1El = document.getElementById('isbn1');
+var bookTitle2El = document.getElementById('book-title2');
+var review2El = document.getElementById('review2');
+var isbn2El = document.getElementById('isbn2');
+var bookTitle3El = document.getElementById('book-title3');
+var review3El = document.getElementById('review3');
+var isbn3El = document.getElementById('isbn3');
 var isbnFooterEl = document.getElementById('isbn-footer');
 var selectObj = [] || JSON.parse(localStorage.getItem('isbn-local'));
 
@@ -44,22 +53,35 @@ function author_det() {
       return response.json();
     })
     .then(function (data) {
-      for (var i=0; i<3; i=i+1) {
-        var authorBookTitle = document.createElement('div');
-        var authorBookReview = document.createElement('a');
-        var authorBookIsbn = document.createElement('div');
-        //console.log(data.results[i].book_title);
-        //console.log(data.results[i].url);
-        //console.log(data.results[i].isbn13[0]);
-        authorBookTitle.setAttribute('id', data.results[i].book_title);
-        authorBookReview.setAttribute('href',data.results[i].url);
-        authorBookIsbn.setAttribute('id',data.results[i].isbn13[0]);
-        console.log(authorBookTitle);
-        displayResultEl.append(data.results[i].book_title);
-        displayResultEl.append(authorBookReview);
-        displayResultEl.append(authorBookIsbn);
-        
+      for (var i=0; i<1; i=i+1) {
+       
+        console.log(data.results[0].book_title);
+        console.log(data.results[0].url);
+        console.log(data.results[0].isbn13[0]);
+        bookTitle1El.append(data.results[0].book_title);
+        review1El.setAttribute('href',data.results[0].url);
+        review1El.append(data.results[0].url);
+        isbn1El.append(data.results[0].isbn13[0]);
+
+        console.log(data.results[1].book_title);
+        console.log(data.results[1].url);
+        console.log(data.results[1].isbn13[0]);
+        bookTitle2El.append(data.results[1].book_title);
+        review2El.setAttribute('href',data.results[1].url);
+        review2El.append(data.results[1].url);
+        isbn2El.append(data.results[1].isbn13[0]);
+
+        console.log(data.results[2].book_title);
+        console.log(data.results[2].url);
+        console.log(data.results[2].isbn13[0]);
+        bookTitle3El.append(data.results[2].book_title);
+        review3El.setAttribute('href',data.results[2].url);
+        review3El.append(data.results[2].url);
+        isbn3El.append(data.results[2].isbn13[0]);
+      
       } 
+
+
     })
     .catch(function (error) {
       console.error(error);
