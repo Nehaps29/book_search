@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Book-Details</title>
+  </head>
+  <body>
+   <section class="section is-dark is-small">
+    <div class = "columns">
+      <p class = "column"><img class="is-rounded" src= "assets/images/book.JPG"></h1>
+      <p class = "column content is-large has-text-weight-bold">Book Search App</p>
+      <p class = "column content is-small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsum aut soluta debitis possimus provident. Et iure numquam est earum, autem illum id vitae culpa commodi fuga. Inventore, aspernatur perferendis!</p>
+    </div>
+   </section> 
+   
+  <body>
+    <section class="section is-small 
+      has-background-warning">
+      <div class = "columns">
+        <div class="control">
+          <p><b>Choose Criteria:</b></p>
+
+          <label class="radio">
+            <input type="radio" id = "a" name="criteria" value = "author">
+            Author
+          </label>
+          <label class="radio">
+            <input type="radio" id = "i" name="criteria" value = "isbn">
+            ISBN
+          </label>
+          <button id="submit">Submit</button>
+        </div>
+        <div class = "column"><input id = "author-name" type="text" class="input is-primary" placeholder="author's name" >
+          <button id="author-button">Get Author</button> </div>
+        <div class = "column"><input id = "isbn" type="text" class="input is-primary" placeholder="isbn">
+          <button id="isbn-button">Get ISBN</button> </div>
+      </div>
+  
+      
+    </section>
+  
+    <section id = "display-result" class="section is-large 
+      has-background-primary columns">
+      <!--<div id = "recent-isbn" class = "column"></div>
+      <div id="display-list" class = "column"></div> -->
+    </section>
+
+    <section class="section is-small 
+      has-background-warning">
+      <div id="isbn-footer">ISBN Footer</div>
+      
+    </section>
+  </body>
+   
+   
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
+
